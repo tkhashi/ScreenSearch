@@ -13,7 +13,9 @@
         "EOF": true,
         "gh": true,
         "git fetch": true,
-        "git remote": true
+        "git remote": true,
+        "git switch": true,
+        "git pull": true
     }
 }
 
