@@ -28,6 +28,22 @@ public sealed class ExecuteClickUseCase
         string clickType,
         Func<double, double, bool> clickAction)
     {
+        var normalizedClickType = clickType.Trim().ToLowerInvariant();
+        if (normalizedClickType is not ("left" or "right"))
+        {
+            var invalidType = new ClickRequest(
+                Guid.NewGuid().ToString("N"),
+                sessionId,
+                label,
+                normalizedClickType,
+                DateTimeOffset.UtcNow,
+                null,
+                null,
+                null,
+                "failed");
+            return (invalidType, _clickExecutionWriter.Write(invalidType));
+        }
+
         var resolved = _candidateResolver.ResolveByLabel(candidates, label);
         if (resolved is null)
         {
@@ -35,7 +51,7 @@ public sealed class ExecuteClickUseCase
                 Guid.NewGuid().ToString("N"),
                 sessionId,
                 label,
-                clickType,
+                normalizedClickType,
                 DateTimeOffset.UtcNow,
                 null,
                 null,
@@ -45,12 +61,21 @@ public sealed class ExecuteClickUseCase
         }
 
         var (x, y) = _clickPointCalculator.CalculateCenter(resolved);
-        var ok = clickAction(x, y);
+        bool ok;
+        try
+        {
+            ok = clickAction(x, y);
+        }
+        catch
+        {
+            ok = false;
+        }
+
         var request = new ClickRequest(
             Guid.NewGuid().ToString("N"),
             sessionId,
-            label,
-            clickType,
+            resolved.Label,
+            normalizedClickType,
             DateTimeOffset.UtcNow,
             DateTimeOffset.UtcNow,
             x,

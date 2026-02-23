@@ -88,3 +88,10 @@ tests/
 | Violation | Why Needed | Simpler Alternative Rejected Because |
 |-----------|------------|-------------------------------------|
 | なし | N/A | N/A |
+
+## 進行状況（2026-02-23）
+
+- 完了: Phase 4（US2）T022〜T028
+- 検証: `dotnet build ScreenSearch.sln` 成功
+- Backlog更新: `tasks.md` の US2 タスクを `[x]` へ更新済み
+- 新規制約: `CGEvent` 注入は Accessibility 権限未付与時に失敗しうるため、失敗時はログ優先で切り分ける
