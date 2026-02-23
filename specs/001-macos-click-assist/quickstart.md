@@ -36,7 +36,9 @@
 
 ## US2 手動検証（左/右クリック実行）
 1. 対象アプリ（Finder など）を前面にする。
-2. `SCREENSEARCH_ACCESSIBILITY_TRUSTED=true dotnet run --project src/ScreenSearch.UI/ScreenSearch.UI.csproj -- --verify-us2` を実行する。
+2. 次のどちらか一方で `--verify-us2` を実行する。
+   - `SCREENSEARCH_ACCESSIBILITY_TRUSTED=true dotnet run --project src/ScreenSearch.UI/ScreenSearch.UI.csproj -- --verify-us2`
+   - `SCREENSEARCH_ACCESSIBILITY_TRUSTED=true dotnet ./src/ScreenSearch.UI/bin/Debug/net10.0-macos/osx-arm64/ScreenSearch.UI.dll --verify-us2`
 3. 出力ログの `US2 verify target label` と `Click Target` を確認する。
 4. `Type: left` と `Type: right` がそれぞれ1回ずつ出力されることを確認する。
 5. `Result: success|failed` が left/right それぞれ出力されることを確認する。
