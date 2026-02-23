@@ -42,6 +42,12 @@
 5. `Result: success|failed` が left/right それぞれ出力されることを確認する。
 6. 標準出力が見えない場合は、`Verification log file: ...` に表示されたパスのログファイルを確認する。
 
+### US2 デバッグ補助（dotnet run で標準出力が見えない場合）
+1. `dotnet build ScreenSearch.sln` を実行する。
+2. `SCREENSEARCH_ACCESSIBILITY_TRUSTED=true dotnet ./src/ScreenSearch.UI/bin/Debug/net10.0-macos/osx-arm64/ScreenSearch.UI.dll --verify-us2` を実行する。
+3. `[ScreenSearch Diagnostic Log]`、`US2 verify target label`、`Click Target ... Result: success|failed` が表示されることを確認する。
+4. 必要に応じて `Verification log file: ...` のパスを開き、出力内容を確認する。
+
 ### US2 期待結果
 - 候補が一意解決できる場合のみクリックが実行される。
 - left/right の種別がログで識別できる。
