@@ -41,3 +41,23 @@
 - System MUST:
   - 最終結果をログ出力
   - 次回起動可能な初期状態へ戻す
+
+## 診断ログ契約（必須）
+- System MUST:
+  - 以下の順でログを出力する
+
+```text
+[ScreenSearch Diagnostic Log]
+macOS Version: ...
+Architecture: arm64|x64
+Accessibility Trusted: true|false
+Active App: bundle_id / pid
+Focused Window: present|absent
+Elements Extracted: N
+Sample Frames (top 5): role / name / frame (x, y, w, h)
+Click Target: x, y / Type: left|right
+```
+
+- Failure Contract:
+  - 失敗時は `permission|focus|extraction|click` のいずれかを必ず記録する
+  - 失敗時でも欠損なしでログを出力する
