@@ -11,7 +11,9 @@
         ".specify/scripts/powershell/": true,
         "git rev-parse": true,
         "EOF": true,
-        "gh": true
+        "gh": true,
+        "git fetch": true,
+        "git remote": true
     }
 }
 
