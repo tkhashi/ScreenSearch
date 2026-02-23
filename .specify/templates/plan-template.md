@@ -31,7 +31,12 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] 機能実現最優先: 提案内容は MVP 検証に直結し、過度な抽象化や不要な管理コードを含まない。
+- [ ] アジャイル検証: 実装サイクルごとに `What / Why / How to test / Expected / Logs` を定義している。
+- [ ] 実行責務: タスク分解・優先順位・進捗管理をエージェント側で実施する計画になっている。
+- [ ] 実現不能時対応: 実装困難時に顧客へ要件再交渉する判定ポイントを明示している。
+- [ ] 日本語運用: 生成されるドキュメント、コメント、検証手順を日本語で記述する前提になっている。
+- [ ] デリバリー運用: 節目ごとのコミット/プッシュとスプリント完了時 PR 作成が計画に含まれている。
 
 ## Project Structure
 

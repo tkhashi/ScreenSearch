@@ -1,50 +1,62 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: N/A -> 1.0.0
+- Modified principles:
+	- テンプレート原則1 -> I. 機能実現最優先と最小構成
+	- テンプレート原則2 -> II. アジャイル検証ループ
+	- テンプレート原則3 -> III. エージェント主導の実行責務
+	- テンプレート原則4 -> IV. 実現不能時の要件再交渉
+	- テンプレート原則5 -> V. 日本語運用と意図コメント
+- Added sections:
+	- 技術・設計制約
+	- 開発運用フロー
+- Removed sections:
+	- なし
+- Templates requiring updates:
+	- ✅ updated: .specify/templates/plan-template.md
+	- ✅ updated: .specify/templates/spec-template.md
+	- ✅ updated: .specify/templates/tasks-template.md
+	- ✅ updated: .github/copilot-instructions.md
+	- ⚠ pending: .specify/templates/commands/*.md (対象ファイルなし)
+- Follow-up TODOs:
+	- なし
+-->
+
+# ScreenSearch Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. 機能実現最優先と最小構成
+本プロジェクトは MVP の機能実現を最優先とし、実装は最短で検証可能な形に分割しなければならない。過度な抽象化、将来の不確実な拡張を前提とした層追加、管理コードの増加を目的とした設計は行ってはならない。アーキテクチャ判断は、同等の機能を満たす選択肢の中で管理コストが最小の案を優先しなければならない。理由: 初期フェーズでは保守性よりも価値検証速度が成果を左右するため。
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. アジャイル検証ループ
+すべての開発サイクルは顧客検証可能な最小変更単位で進めなければならない。各タスク開始時に `What / Why / How to test / Expected / Logs` を明示し、顧客の実行結果を次サイクルへ反映しなければならない。実装は 1〜3 ファイル程度の小さい差分を原則とし、失敗時は前進より原因切り分けを優先しなければならない。理由: 方針変更に迅速対応しつつ誤実装コストを下げるため。
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. エージェント主導の実行責務
+コーディングエージェントは開発者・PdM・PMの実行責務を担い、タスク分解、進捗管理、優先順位管理、次アクション提案を主体的に行わなければならない。顧客は成果物レビュー、動作検証、方針変更要求、修正要求の意思決定者として扱わなければならない。理由: 顧客の意思決定速度を維持し、実装側の待機時間を最小化するため。
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. 実現不能時の要件再交渉
+望まれた機能について実現方法を複数試しても成立しない、またはコストが過大であると判断した場合、エージェントは強引に実装を継続してはならない。必ず顧客へ制約、失敗要因、代替案を提示し、要件変更または段階的スコープ調整の合意を取ってから再開しなければならない。理由: 無理な前進で品質と速度を同時に失うことを防ぐため。
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. 日本語運用と意図コメント
+コメント、ドキュメント、タスク記述、検証手順はすべて日本語で記載しなければならない。コードコメントは「何をしているか」ではなく「なぜこの実装が必要か」「ドメイン上の重要判断は何か」に限定して記載しなければならない。理由: 意思決定の背景を短時間で共有し、レビュー効率を高めるため。
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## 技術・設計制約
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- UI は Avalonia、macOS 依存処理は分離レイヤーで実装し、責務境界を崩さない。
+- 同一目的の実装では、抽象化レイヤー数が少ない構成を優先する。
+- 新規フレームワークや複雑な共通基盤の導入は、現在のタスク価値に対する必要性を説明できる場合のみ許可する。
+- デバッグ可能性を維持するため、診断ログ出力を各サイクルで維持する。
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## 開発運用フロー
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- 1タスク完了、または意味のある節目ごとにコミット・プッシュを行う。
+- スプリント完了時には PR を作成し、目的・検証結果・残課題を日本語で明記する。
+- 実装手順は「設計最小化 → 実装 → 顧客検証 → 反映」の順で回す。
+- 仕様変更要求が入った場合、最新タスク計画を更新してから実装を再開する。
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+この憲章は ScreenSearch の実装・計画・レビュー手順より優先される。憲章改定は、(1) 変更理由、(2) 影響範囲、(3) 既存テンプレート同期結果を明記した更新として実施しなければならない。バージョンはセマンティックバージョニングを用い、原則として「原則の削除・非互換変更=MAJOR」「原則や必須セクションの追加=MINOR」「文言明確化・誤記修正=PATCH」とする。すべての PR と計画レビューは憲章適合チェックを必須とし、違反がある場合は実装より先に計画または要件を修正しなければならない。
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-02-23 | **Last Amended**: 2026-02-23

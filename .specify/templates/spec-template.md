@@ -5,6 +5,14 @@
 **Status**: Draft  
 **Input**: User description: "$ARGUMENTS"
 
+## Constitution Alignment *(mandatory)*
+
+- この機能が MVP の機能実現にどう直結するかを明記する
+- 過度な抽象化を避ける設計方針を明記する
+- 実装困難時に要件再交渉する条件と連絡タイミングを明記する
+- ドキュメント/コメント/検証手順を日本語で記載する
+- タスク分解と進捗管理をエージェント主導で行う前提を明記する
+
 ## User Scenarios & Testing *(mandatory)*
 
 <!--
