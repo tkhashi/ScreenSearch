@@ -11,12 +11,12 @@
 
 **Purpose**: MVP検証を開始できる最小構成を整える。
 
-- [ ] T001 ソリューションとプロジェクト骨組みを作成する in `ScreenSearch.sln`
-- [ ] T002 `src/ScreenSearch.Core/` プロジェクトを初期化する in `src/ScreenSearch.Core/ScreenSearch.Core.csproj`
-- [ ] T003 [P] `src/ScreenSearch.macOS/` プロジェクトを初期化する in `src/ScreenSearch.macOS/ScreenSearch.macOS.csproj`
-- [ ] T004 [P] `src/ScreenSearch.UI/` プロジェクトを初期化する in `src/ScreenSearch.UI/ScreenSearch.UI.csproj`
-- [ ] T005 共通起動設定を追加する in `Directory.Build.props`
-- [ ] T006 サイクル定義テンプレートを追加する in `docs/cycle-template.md`
+- [x] T001 ソリューションとプロジェクト骨組みを作成する in `ScreenSearch.sln`
+- [x] T002 `src/ScreenSearch.Core/` プロジェクトを初期化する in `src/ScreenSearch.Core/ScreenSearch.Core.csproj`
+- [x] T003 [P] `src/ScreenSearch.macOS/` プロジェクトを初期化する in `src/ScreenSearch.macOS/ScreenSearch.macOS.csproj`
+- [x] T004 [P] `src/ScreenSearch.UI/` プロジェクトを初期化する in `src/ScreenSearch.UI/ScreenSearch.UI.csproj`
+- [x] T005 共通起動設定を追加する in `Directory.Build.props`
+- [x] T006 サイクル定義テンプレートを追加する in `docs/cycle-template.md`
 
 ---
 
@@ -26,14 +26,14 @@
 
 **⚠️ CRITICAL**: このフェーズ完了前に US1/US2/US3 の実装へ進まない。
 
-- [ ] T007 診断ログの共通フォーマットを実装する in `src/ScreenSearch.Core/Diagnostics/DiagnosticLogFormatter.cs`
-- [ ] T008 [P] セッションモデルを定義する in `src/ScreenSearch.Core/Models/OperationSession.cs`
-- [ ] T009 [P] 候補モデルを定義する in `src/ScreenSearch.Core/Models/OperationCandidate.cs`
-- [ ] T010 [P] クリック要求モデルを定義する in `src/ScreenSearch.Core/Models/ClickRequest.cs`
-- [ ] T011 失敗カテゴリ列挙を定義する in `src/ScreenSearch.Core/Models/FailureCategory.cs`
-- [ ] T012 実現不能時の再交渉判定ルールを実装する in `src/ScreenSearch.Core/Policies/FeasibilityPolicy.cs`
-- [ ] T013 依存注入の最小構成を追加する in `src/ScreenSearch.UI/Program.cs`
-- [ ] T014 `What/Why/How to test/Expected/Logs` 出力ヘルパーを追加する in `src/ScreenSearch.Core/Diagnostics/CycleSummaryWriter.cs`
+- [x] T007 診断ログの共通フォーマットを実装する in `src/ScreenSearch.Core/Diagnostics/DiagnosticLogFormatter.cs`
+- [x] T008 [P] セッションモデルを定義する in `src/ScreenSearch.Core/Models/OperationSession.cs`
+- [x] T009 [P] 候補モデルを定義する in `src/ScreenSearch.Core/Models/OperationCandidate.cs`
+- [x] T010 [P] クリック要求モデルを定義する in `src/ScreenSearch.Core/Models/ClickRequest.cs`
+- [x] T011 失敗カテゴリ列挙を定義する in `src/ScreenSearch.Core/Models/FailureCategory.cs`
+- [x] T012 実現不能時の再交渉判定ルールを実装する in `src/ScreenSearch.Core/Policies/FeasibilityPolicy.cs`
+- [x] T013 依存注入の最小構成を追加する in `src/ScreenSearch.UI/Program.cs`
+- [x] T014 `What/Why/How to test/Expected/Logs` 出力ヘルパーを追加する in `src/ScreenSearch.Core/Diagnostics/CycleSummaryWriter.cs`
 
 **Checkpoint**: 共通モデル・診断・実行ポリシーが揃い、各ストーリーを独立実装できる。
 
@@ -47,13 +47,13 @@
 
 ### Implementation for User Story 1
 
-- [ ] T015 [P] [US1] Accessibility権限チェックを実装する in `src/ScreenSearch.macOS/Accessibility/AccessibilityHelper.cs`
-- [ ] T016 [P] [US1] 前面アプリとフォーカスウィンドウ取得を実装する in `src/ScreenSearch.macOS/Accessibility/FocusedWindowProvider.cs`
-- [ ] T017 [US1] AX要素列挙を実装する in `src/ScreenSearch.macOS/Accessibility/AXElementFetcher.cs`
-- [ ] T018 [US1] 候補フィルタ（最小サイズ・画面内判定）を実装する in `src/ScreenSearch.Core/Candidates/CandidateFilter.cs`
-- [ ] T019 [US1] 候補抽出ユースケースを実装する in `src/ScreenSearch.Core/UseCases/ExtractCandidatesUseCase.cs`
-- [ ] T020 [US1] サンプルフレーム上位5件のログ出力を実装する in `src/ScreenSearch.Core/Diagnostics/CandidateSampleWriter.cs`
-- [ ] T021 [US1] US1手動検証手順を追加する in `specs/001-macos-click-assist/quickstart.md`
+- [x] T015 [P] [US1] Accessibility権限チェックを実装する in `src/ScreenSearch.macOS/Accessibility/AccessibilityHelper.cs`
+- [x] T016 [P] [US1] 前面アプリとフォーカスウィンドウ取得を実装する in `src/ScreenSearch.macOS/Accessibility/FocusedWindowProvider.cs`
+- [x] T017 [US1] AX要素列挙を実装する in `src/ScreenSearch.macOS/Accessibility/AXElementFetcher.cs`
+- [x] T018 [US1] 候補フィルタ（最小サイズ・画面内判定）を実装する in `src/ScreenSearch.Core/Candidates/CandidateFilter.cs`
+- [x] T019 [US1] 候補抽出ユースケースを実装する in `src/ScreenSearch.Core/UseCases/ExtractCandidatesUseCase.cs`
+- [x] T020 [US1] サンプルフレーム上位5件のログ出力を実装する in `src/ScreenSearch.Core/Diagnostics/CandidateSampleWriter.cs`
+- [x] T021 [US1] US1手動検証手順を追加する in `specs/001-macos-click-assist/quickstart.md`
 
 **Checkpoint**: US1単独で候補抽出可否を検証できる。
 
