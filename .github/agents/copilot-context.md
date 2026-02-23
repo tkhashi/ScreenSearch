@@ -25,7 +25,6 @@ C# / .NET 10（ローカル環境で不可の場合は .NET 8 にフォールバ
 
 ## Recent Changes
 - 001-macos-click-assist: Added C# / .NET 10（環境制約時は .NET 8 を一時フォールバックし差分記録） + Avalonia, AXUIElement, CoreGraphics CGEven
-- 001-macos-click-assist: Added C# / .NET 10（環境制約時は .NET 8 を一時フォールバックし差分記録） + Avalonia, AXUIElement, CoreGraphics CGEven
 
 - 001-macos-click-assist: Added C# / .NET 10（ローカル環境で不可の場合は .NET 8 にフォールバックして差分を記録） + Avalonia（UI/オーバーレイ）, macOS Accessibility API（AXUIElement）, CoreGraphics CGEvent（入力注入）
 
