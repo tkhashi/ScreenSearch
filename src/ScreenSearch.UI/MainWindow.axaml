@@ -5,5 +5,10 @@
         Width="600"
         Height="320"
         Title="ScreenSearch">
-  <overlay:OverlayView />
+  <DockPanel>
+    <Border DockPanel.Dock="Bottom" Padding="8">
+      <TextBlock x:Name="HotKeyStatusText" Text="HotKey待機中: Cmd+Shift+M" />
+    </Border>
+    <overlay:OverlayView x:Name="OverlayControl" IsVisible="False" />
+  </DockPanel>
 </Window>

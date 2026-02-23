@@ -81,20 +81,25 @@
 
 ## Phase 5: User Story 3 - ホットキー起点の一連フロー (Priority: P3)
 
-**Goal**: ホットキー開始から候補表示・入力選択・クリック実行・終了までの一連フローを成立させる。
+**Goal**: ホットキー開始から、US1の実候補抽出結果に対するオーバーレイラベル表示（座標配置）→入力選択→US2クリック実行→終了までを一連で成立させる。
 
-**Independent Test**: ホットキーから1回通し実行し、完了後に再起動可能状態へ戻ることを確認できれば完了。
+**Independent Test**: 対象アプリを前面にしてホットキーから1回通し実行し、実候補のラベル表示・入力選択・クリック実行・完了後の再起動可能状態を確認できれば完了。
 
 ### Implementation for User Story 3
 
-- [ ] T029 [US3] ホットキー受信を実装する in `src/ScreenSearch.UI/HotKey/GlobalHotKeyListener.cs`
-- [ ] T030 [US3] ラベル生成ロジックを実装する in `src/ScreenSearch.Core/Labeling/LabelGenerator.cs`
-- [ ] T031 [US3] 接頭辞絞り込みロジックを実装する in `src/ScreenSearch.Core/Labeling/PrefixFilter.cs`
-- [ ] T032 [P] [US3] オーバーレイ表示モデルを実装する in `src/ScreenSearch.UI/Overlay/OverlayViewModel.cs`
-- [ ] T033 [P] [US3] オーバーレイUIを実装する in `src/ScreenSearch.UI/Overlay/OverlayView.axaml`
-- [ ] T034 [US3] 一連フローのオーケストレーションを実装する in `src/ScreenSearch.UI/Workflows/HotKeyClickWorkflow.cs`
-- [ ] T035 [US3] セッション終了と再起動可能状態への復帰処理を実装する in `src/ScreenSearch.Core/UseCases/FinalizeSessionUseCase.cs`
-- [ ] T036 [US3] US3手動検証手順を追加する in `specs/001-macos-click-assist/quickstart.md`
+- [x] T029 [US3] ホットキー受信を実装する in `src/ScreenSearch.UI/HotKey/GlobalHotKeyListener.cs`
+- [x] T030 [US3] ラベル生成ロジックを実装する in `src/ScreenSearch.Core/Labeling/LabelGenerator.cs`
+- [x] T031 [US3] 接頭辞絞り込みロジックを実装する in `src/ScreenSearch.Core/Labeling/PrefixFilter.cs`
+- [x] T032 [P] [US3] オーバーレイ表示モデルを実装する in `src/ScreenSearch.UI/Overlay/OverlayViewModel.cs`
+- [x] T033 [P] [US3] オーバーレイUIを実装する in `src/ScreenSearch.UI/Overlay/OverlayView.axaml`
+- [x] T034 [US3] 一連フローのオーケストレーションを実装する in `src/ScreenSearch.UI/Workflows/HotKeyClickWorkflow.cs`
+- [x] T035 [US3] セッション終了と再起動可能状態への復帰処理を実装する in `src/ScreenSearch.Core/UseCases/FinalizeSessionUseCase.cs`
+- [x] T036 [US3] US3手動検証手順を追加する in `specs/001-macos-click-assist/quickstart.md`
+- [x] T042 [US3] US1抽出候補へラベルを付与して座標付き表示データを生成する in `src/ScreenSearch.Core/UseCases/ExtractCandidatesUseCase.cs`
+- [x] T043 [US3] 実候補座標へオーバーレイラベルを重畳描画する in `src/ScreenSearch.UI/Overlay/OverlayView.axaml.cs`
+- [x] T044 [US3] ラベル選択をUS2クリック実行（left/right）へ接続する in `src/ScreenSearch.UI/MainWindow.axaml.cs`
+- [x] T045 [US3] 実行中の前面アプリ切替検知時にセッション中断・再取得案内を実装する in `src/ScreenSearch.UI/MainWindow.axaml.cs`
+- [x] T046 [US3] US3統合手順（実候補ラベル表示→選択→クリック→終了）を更新する in `specs/001-macos-click-assist/quickstart.md`
 
 **Checkpoint**: US3単独で一連フローの体験確認ができる。
 
