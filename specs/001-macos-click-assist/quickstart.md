@@ -35,10 +35,12 @@
 - サンプルフレームは最大5件で出力される。
 
 ## US2 手動検証（左/右クリック実行）
-1. US1の手順で候補抽出を実行し、候補ラベルを控える。
-2. left 実行を行い、`Click Target` ログの座標と `Type: left` を確認する。
-3. right 実行を行い、`Click Target` ログの座標と `Type: right` を確認する。
-4. 実行ログに `Result: success|failed` が出ることを確認する。
+1. 対象アプリ（Finder など）を前面にする。
+2. `SCREENSEARCH_ACCESSIBILITY_TRUSTED=true dotnet run --project src/ScreenSearch.UI/ScreenSearch.UI.csproj -- --verify-us2` を実行する。
+3. 出力ログの `US2 verify target label` と `Click Target` を確認する。
+4. `Type: left` と `Type: right` がそれぞれ1回ずつ出力されることを確認する。
+5. `Result: success|failed` が left/right それぞれ出力されることを確認する。
+6. 標準出力が見えない場合は、`Verification log file: ...` に表示されたパスのログファイルを確認する。
 
 ### US2 期待結果
 - 候補が一意解決できる場合のみクリックが実行される。

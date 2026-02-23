@@ -125,6 +125,8 @@ _Backlog に Epic 0 (可否検証) から Epic 1 (体験) の 8 タスクが登�
 - 作業開始前に必ず `git fetch --all --prune` を実行し、`git status -sb` で remote 追従状態を確認してから着手する
 - ステップごと、スプリントごと、その他節目で小まめに commit / push
 - 新しいブランチで最初の commit / push を行った場合は、必ずその時点で PR を作成する
+- PRのタイトルは日本語で `${タスクID} ${簡単な説明}` の形式を推奨（例: `S0-1 AXUIElement で要素検出`）
+- 新しいブランチは特殊なケースを除き main ブランチから切る。ブランチ名は `copilot/s0-1-brief-description` の形式を推奨
 - 作業完了時は、最新の変更内容・検証結果・残課題を反映して既存 PR を更新する
 - push / PR の前にかならずremoteのOpenなPRの内容を全て確認し、先にMergeされる必要のあるPRがある場合は自分のPRをDraftに切り替える。他のPRとのも兼ね合いも確認したうえでMerge可能な状態であればPRをReady for reviewにする
 - Merge する時は必ず他のOpenなPRの内容を全て確認し、Merge順を調整する必要があるPRがある場合はそちらを先にMergeする

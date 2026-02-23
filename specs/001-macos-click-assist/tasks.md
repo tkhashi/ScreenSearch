@@ -104,11 +104,11 @@
 
 **Purpose**: 横断事項の整備と最終確認。
 
-- [ ] T037 診断ログ出力内容を仕様と突合する in `specs/001-macos-click-assist/contracts/interaction-contract.md`
-- [ ] T038 [P] 既知制約と再交渉条件を追記する in `specs/001-macos-click-assist/research.md`
-- [ ] T039 quickstartの手順を最新フローへ更新する in `specs/001-macos-click-assist/quickstart.md`
-- [ ] T040 [P] 進捗と残課題をPR本文へ反映する in `.github/pull_request_template.md`
-- [ ] T041 最終セルフチェック結果を記録する in `specs/001-macos-click-assist/checklists/requirements.md`
+- [x] T037 診断ログ出力内容を仕様と突合する in `specs/001-macos-click-assist/contracts/interaction-contract.md`
+- [x] T038 [P] 既知制約と再交渉条件を追記する in `specs/001-macos-click-assist/research.md`
+- [x] T039 quickstartの手順を最新フローへ更新する in `specs/001-macos-click-assist/quickstart.md`
+- [x] T040 [P] 進捗と残課題をPR本文へ反映する in `.github/pull_request_template.md`
+- [x] T041 最終セルフチェック結果を記録する in `specs/001-macos-click-assist/checklists/requirements.md`
 
 ---
 
