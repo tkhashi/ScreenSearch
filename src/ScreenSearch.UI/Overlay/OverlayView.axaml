@@ -1,10 +1,16 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="ScreenSearch.UI.Overlay.OverlayView">
-  <Border Padding="12">
-    <StackPanel Spacing="8">
-      <TextBlock Text="ScreenSearch Overlay" />
-      <TextBlock Text="ラベル入力で候補を絞り込み" />
-    </StackPanel>
-  </Border>
+  <Grid>
+    <Canvas x:Name="MarkerCanvas" IsHitTestVisible="False" />
+    <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12" Padding="10" Background="#CC111111">
+      <StackPanel Spacing="6" Width="340">
+        <TextBlock Text="ScreenSearch Overlay" Foreground="White" />
+        <TextBlock x:Name="OverlayStateText" Text="ラベル入力で候補を絞り込み" Foreground="White" />
+        <TextBox x:Name="LabelInputBox" Watermark="例: AA" />
+        <TextBlock x:Name="CandidatesText" Text="候補なし" TextWrapping="Wrap" Foreground="White" MaxHeight="120" />
+        <TextBlock Text="Enter: 左クリック / Ctrl+Enter: 右クリック / Esc: キャンセル" Foreground="White" />
+      </StackPanel>
+    </Border>
+  </Grid>
 </UserControl>

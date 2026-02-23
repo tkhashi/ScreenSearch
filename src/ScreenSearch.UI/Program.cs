@@ -2,6 +2,7 @@ using Avalonia;
 using ScreenSearch.Core.Candidates;
 using ScreenSearch.Core.Click;
 using ScreenSearch.Core.Diagnostics;
+using ScreenSearch.Core.Labeling;
 using ScreenSearch.Core.Models;
 using ScreenSearch.Core.Policies;
 using ScreenSearch.Core.UseCases;
@@ -138,7 +139,8 @@ internal static class Program
         var fetcher = new AXElementFetcher();
         var filter = new CandidateFilter();
         var sampleWriter = new CandidateSampleWriter();
-        var extractUseCase = new ExtractCandidatesUseCase(filter, sampleWriter);
+        var labelGenerator = new LabelGenerator();
+        var extractUseCase = new ExtractCandidatesUseCase(filter, sampleWriter, labelGenerator);
 
         var snapshot = focusedWindowProvider.GetSnapshot();
         var session = new OperationSession(
