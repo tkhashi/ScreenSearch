@@ -1,6 +1,6 @@
 # Feature Specification: macOSキーボードクリック支援MVP
 
-**Feature Branch**: `001-macos-click-assist`  
+**Feature ID**: `001-macos-click-assist`  
 **Created**: 2026-02-23  
 **Status**: Draft  
 **Input**: User description: "MVP: macOS Screen Search風 キーボードクリック支援ツール（アクティブウィンドウ限定）"

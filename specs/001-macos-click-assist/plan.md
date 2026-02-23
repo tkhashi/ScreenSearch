@@ -1,6 +1,6 @@
 # Implementation Plan: macOSキーボードクリック支援MVP
 
-**Branch**: `001-macos-click-assist` | **Date**: 2026-02-23 | **Spec**: [/Users/kazuhiro.takahashi/Documents/github/ScreenSearch/specs/001-macos-click-assist/spec.md](/Users/kazuhiro.takahashi/Documents/github/ScreenSearch/specs/001-macos-click-assist/spec.md)
+**Feature ID**: `001-macos-click-assist` | **Date**: 2026-02-23 | **Spec**: [/Users/kazuhiro.takahashi/Documents/github/ScreenSearch/specs/001-macos-click-assist/spec.md](/Users/kazuhiro.takahashi/Documents/github/ScreenSearch/specs/001-macos-click-assist/spec.md)
 **Input**: Feature specification from `/specs/001-macos-click-assist/spec.md`
 
 ## Summary
