@@ -67,13 +67,13 @@
 
 ### Implementation for User Story 2
 
-- [ ] T022 [US2] 候補ラベル解決ロジックを実装する in `src/ScreenSearch.Core/Candidates/CandidateResolver.cs`
-- [ ] T023 [US2] クリック座標計算を実装する in `src/ScreenSearch.Core/Click/ClickPointCalculator.cs`
-- [ ] T024 [P] [US2] 左クリック注入を実装する in `src/ScreenSearch.macOS/Input/ClickInjector.cs`
-- [ ] T025 [P] [US2] 右クリック注入を実装する in `src/ScreenSearch.macOS/Input/RightClickInjector.cs`
-- [ ] T026 [US2] クリック実行ユースケースを実装する in `src/ScreenSearch.Core/UseCases/ExecuteClickUseCase.cs`
-- [ ] T027 [US2] クリック結果ログ（座標/種別/成否）を実装する in `src/ScreenSearch.Core/Diagnostics/ClickExecutionWriter.cs`
-- [ ] T028 [US2] US2手動検証手順を追加する in `specs/001-macos-click-assist/quickstart.md`
+- [x] T022 [US2] 候補ラベル解決ロジックを実装する in `src/ScreenSearch.Core/Candidates/CandidateResolver.cs`
+- [x] T023 [US2] クリック座標計算を実装する in `src/ScreenSearch.Core/Click/ClickPointCalculator.cs`
+- [x] T024 [P] [US2] 左クリック注入を実装する in `src/ScreenSearch.macOS/Input/ClickInjector.cs`
+- [x] T025 [P] [US2] 右クリック注入を実装する in `src/ScreenSearch.macOS/Input/RightClickInjector.cs`
+- [x] T026 [US2] クリック実行ユースケースを実装する in `src/ScreenSearch.Core/UseCases/ExecuteClickUseCase.cs`
+- [x] T027 [US2] クリック結果ログ（座標/種別/成否）を実装する in `src/ScreenSearch.Core/Diagnostics/ClickExecutionWriter.cs`
+- [x] T028 [US2] US2手動検証手順を追加する in `specs/001-macos-click-assist/quickstart.md`
 
 **Checkpoint**: US2単独で left/right 実行可否を検証できる。
 

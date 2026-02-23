@@ -32,4 +32,9 @@ specs/
 - 002-pr-state-guard: PR運用ガード（MERGED/CLOSED PRを編集しない）を追加
 
 <!-- MANUAL ADDITIONS START -->
+- US2検証で `dotnet run -- --verify-us2` の標準出力が見えない場合は、次を優先して使用する:
+	- `dotnet build ScreenSearch.sln`
+	- `SCREENSEARCH_ACCESSIBILITY_TRUSTED=true dotnet ./src/ScreenSearch.UI/bin/Debug/net10.0-macos/osx-arm64/ScreenSearch.UI.dll --verify-us2`
+- 期待ログ: `[ScreenSearch Diagnostic Log]`、`US2 verify target label`、left/right の `Click Target ... Result: success|failed`
+- ログファイル保存先: `Verification log file: ...` に表示される `/tmp` 配下（環境により `/var/folders/.../T/ScreenSearch/verify-us2-latest.log`）
 <!-- MANUAL ADDITIONS END -->
