@@ -126,6 +126,8 @@ _Backlog に Epic 0 (可否検証) から Epic 1 (体験) の 8 タスクが登�
 - ステップごと、スプリントごと、その他節目で小まめに commit / push
 - 新しいブランチで最初の commit / push を行った場合は、必ずその時点で PR を作成する
 - 作業完了時は、最新の変更内容・検証結果・残課題を反映して既存 PR を更新する
+- push / PR の前にかならずremoteのOpenなPRの内容を全て確認し、先にMergeされる必要のあるPRがある場合は自分のPRをDraftに切り替える。他のPRとのも兼ね合いも確認したうえでMerge可能な状態であればPRをReady for reviewにする
+- Merge する時は必ず他のOpenなPRの内容を全て確認し、Merge順を調整する必要があるPRがある場合はそちらを先にMergeする
 - PR が `MERGED` または `CLOSED` の場合はその PR を編集せず、新しいブランチを切って新規 PR を作成する
 - PR本文は `.github/pull_request_template.md` のフォーマットに従う
 - スプリント完了時は PR を作成し、目的・結果・残課題を日本語で記載
